@@ -741,6 +741,20 @@ p:last-child {
   aspect-ratio: 1;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 2px;
+}
+
+.gallery-teaser__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background var(--transition-base);
+  z-index: 1;
+}
+
+.gallery-teaser__item:hover::after {
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .gallery-teaser__item img {

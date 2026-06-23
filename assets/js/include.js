@@ -9,20 +9,20 @@
  * in the <head> (deferred) or just before </body>.
  */
 
+/* ---- Determine path prefix for partials ---- */
+const pagePath = window.location.pathname.replace(/\/+$/, '');
+const scriptSrc = document.currentScript && document.currentScript.src;
+let prefix = '';
+if (scriptSrc) {
+  const scriptPath = new URL(scriptSrc).pathname.replace(/\/+$/, '');
+  const siteRoot = scriptPath.replace(/\/assets\/js\/include\.js$/, '');
+  const relative = pagePath.replace(siteRoot, '');
+  const depth = relative.split('/').length - 2;
+  if (depth > 0) prefix = '../'.repeat(depth);
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    /* ---- Determine path prefix for partials ---- */
-    const pagePath = window.location.pathname.replace(/\/+$/, '');
-    const scriptSrc = document.currentScript && document.currentScript.src;
-    let prefix = '';
-    if (scriptSrc) {
-      const scriptPath = new URL(scriptSrc).pathname.replace(/\/+$/, '');
-      const siteRoot = scriptPath.replace(/\/assets\/js\/include\.js$/, '');
-      const relative = pagePath.replace(siteRoot, '');
-      const depth = relative.split('/').length - 2;
-      if (depth > 0) prefix = '../'.repeat(depth);
-    }
-
     /* ---- Inject Header (if not already present) ---- */
     const headerEl = document.getElementById('site-header');
     if (headerEl && !headerEl.querySelector('.site-header__logo')) {
