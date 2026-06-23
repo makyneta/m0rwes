@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Porto | Nicholas Moraes</title>
+  <meta name="description" content="Ouve Porto, o single de estreia de Nicholas Moraes, na tua plataforma preferida.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { background: #151712; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: transparent;
+      color: #f1ede4;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6.5rem 1.5rem 4rem;
+      overflow-x: hidden;
+    }
+
+    .bg {
+      position: fixed;
+      inset: -15%;
+      z-index: -1;
+      min-width: 100vw;
+      min-height: 100vh;
+      background: url('../assets/images/nic/0bc427f1-3580-45f4-87a0-d6f6e6d5008f.jpeg') center / cover no-repeat;
+      filter: blur(50px) brightness(0.7);
+    }
+
+    .card {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .cover {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+    }
+
+    .cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      line-height: 1.15;
+      margin-bottom: 0.2rem;
+    }
+
+    .artist {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(241, 237, 228, 0.55);
+      margin-bottom: 1.75rem;
+    }
+
+    .label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(241, 237, 228, 0.35);
+      margin-bottom: 0.75rem;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.25rem 0;
+      color: rgba(241, 237, 228, 0.1);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(241, 237, 228, 0.06);
+    }
+
+    .fallback {
+      display: block;
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(241, 237, 228, 0.3);
+      text-decoration: none;
+      padding: 0.7rem;
+      border: 1px solid rgba(241, 237, 228, 0.06);
+      border-radius: 6px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .fallback:hover {
+      border-color: rgba(241, 237, 228, 0.15);
+      color: rgba(241, 237, 228, 0.6);
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: rgba(241, 237, 228, 0.25);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .back:hover {
+      color: rgba(241, 237, 228, 0.5);
+    }
+
+    @media (min-width: 768px) {
+      body { padding: 4rem 2rem 5rem; }
+      .cover { margin-bottom: 2rem; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true"></div>
+
+  <div id="site-header"></div>
+
+  <div class="card">
+    <div class="cover">
+      <img src="../assets/images/nic/0bc427f1-3580-45f4-87a0-d6f6e6d5008f.jpeg" alt="Porto — Nicholas Moraes" loading="eager">
+    </div>
+
+    <h1>Porto</h1>
+    <p class="artist">Nicholas Moraes</p>
+
+    <p class="label">Ouve agora em:</p>
+
+    <div class="ouvir-platforms">
+
+      <a href="https://open.spotify.com/intl-pt/track/5a7trCam9eX9Zqumjldr96?si=bafd7c5083874444" class="ouvir-platform" target="_blank" rel="noopener noreferrer">
+        <span class="ouvir-platform__icon"><img src="../assets/images/platforms/spotify.png" alt="Spotify"></span>
+        <span class="ouvir-platform__arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a href="https://music.apple.com/pt/album/porto/1767977756" class="ouvir-platform" target="_blank" rel="noopener noreferrer">
+        <span class="ouvir-platform__icon"><img src="../assets/images/platforms/apple.png" alt="Apple Music"></span>
+        <span class="ouvir-platform__arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a href="https://music.apple.com/pt/album/porto/1767977756" class="ouvir-platform" target="_blank" rel="noopener noreferrer">
+        <span class="ouvir-platform__icon"><img src="../assets/images/platforms/itunes.png" alt="iTunes Store"></span>
+        <span class="ouvir-platform__arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=YsKMSRO9TsU" class="ouvir-platform" target="_blank" rel="noopener noreferrer">
+        <span class="ouvir-platform__icon"><img src="../assets/images/platforms/youtube.png" alt="YouTube"></span>
+        <span class="ouvir-platform__arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a href="https://music.youtube.com/watch?v=YsKMSRO9TsU" class="ouvir-platform" target="_blank" rel="noopener noreferrer">
+        <span class="ouvir-platform__icon"><img src="../assets/images/platforms/ytmusic.png" alt="YouTube Music"></span>
+        <span class="ouvir-platform__arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a href="https://www.tidal.com/track/386527424" class="ouvir-platform" target="_blank" rel="noopener noreferrer">
+        <span class="ouvir-platform__icon"><img src="../assets/images/platforms/tidal.png" alt="Tidal"></span>
+        <span class="ouvir-platform__arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a href="https://www.deezer.com/track/2988791361" class="ouvir-platform" target="_blank" rel="noopener noreferrer">
+        <span class="ouvir-platform__icon"><img src="../assets/images/platforms/deezer.png" alt="Deezer"></span>
+        <span class="ouvir-platform__arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a href="https://music.amazon.com/albums/B0DGNFGT6R/" class="ouvir-platform" target="_blank" rel="noopener noreferrer">
+        <span class="ouvir-platform__icon"><img src="../assets/images/platforms/amazon.png" alt="Amazon Music"></span>
+        <span class="ouvir-platform__arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a href="https://www.amazon.com/dp/B0DGNHRs9V" class="ouvir-platform" target="_blank" rel="noopener noreferrer">
+        <span class="ouvir-platform__icon"><img src="../assets/images/platforms/amazon.png" alt="Amazon Music Download"></span>
+        <span class="ouvir-platform__arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a href="https://pandora.app.link/?$desktop_url=https%3A%2F%2Fwww.pandora.com%2Fartist%2Fnicholas-moraes%2Fporto%2Fporto%2FTRKdKdcXjmcpJqq" class="ouvir-platform" target="_blank" rel="noopener noreferrer">
+        <span class="ouvir-platform__icon"><img src="../assets/images/platforms/pandora.png" alt="Pandora"></span>
+        <span class="ouvir-platform__arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+    </div>
+
+    <div class="divider">ou</div>
+
+    <a href="https://ffm.to/nmporto" class="fallback" target="_blank" rel="noopener noreferrer">
+      Escolher outra plataforma &nbsp;&#8599;
+    </a>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="../assets/js/include.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Nicholas Moraes</title>
+  <meta name="description" content="Página não encontrada.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #f1ede4;
+      background: #151712;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(21, 23, 18, 0.95) 0%,
+        rgba(21, 23, 18, 0.6) 40%,
+        rgba(21, 23, 18, 0.3) 70%
+      );
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+      padding: 3rem 2rem 5rem;
+    }
+
+    .content {
+      max-width: 600px;
+    }
+
+    .content h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(5rem, 20vw, 11rem);
+      font-weight: 700;
+      line-height: 0.85;
+      color: #b5723a;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.25rem;
+    }
+
+    .content h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-weight: 400;
+      font-style: italic;
+      color: #f1ede4;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      color: #a6a094;
+      max-width: 38ch;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      margin-bottom: 2.25rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.75rem 1.75rem;
+      border-radius: 2px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .btn--primary {
+      background: #b5723a;
+      color: #151712;
+      border: 1px solid #b5723a;
+    }
+
+    .btn--primary:hover {
+      background: #c9864e;
+      border-color: #c9864e;
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: #f1ede4;
+      border: 1px solid rgba(241, 237, 228, 0.2);
+    }
+
+    .btn--outline:hover {
+      border-color: #b5723a;
+      color: #d4a05f;
+    }
+
+    @media (min-width: 768px) {
+      main {
+        padding: 4rem 4rem 6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true">
+    <img src="https://makyneta.github.io/m0rwes/assets/images/nic/hero.jpeg" alt="">
+  </div>
+
+  <main>
+    <div class="content">
+      <h1>404</h1>
+      <h2>Isto é constrangedor.</h2>
+      <p>
+        O caminho que procura não existe — ou andou para outro lado.<br>
+        Respire fundo e volte ao início.
+      </p>
+      <div class="links">
+        <a href="https://makyneta.github.io/m0rwes/" class="btn btn--primary">Voltar ao Início</a>
+        <a href="https://makyneta.github.io/m0rwes/lancamentos" class="btn btn--outline">Ouvir "Porto"</a>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

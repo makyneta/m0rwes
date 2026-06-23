@@ -1409,7 +1409,65 @@ p:last-child {
 
 
 /* ------------------------------------
-   21. PRINT STYLES
+    21. PLATFORM LINKS (ouvir page)
+   ------------------------------------ */
+.ouvir-platforms {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ouvir-platform {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.35rem 1rem;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(241, 237, 228, 0.06);
+  border-radius: 6px;
+  text-decoration: none;
+  color: #f1ede4;
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.ouvir-platform:hover {
+  background: rgba(0, 0, 0, 0.45);
+  border-color: rgba(241, 237, 228, 0.12);
+}
+
+.ouvir-platform__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.2rem;
+  max-width: 70%;
+  flex-shrink: 0;
+}
+
+.ouvir-platform__icon img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.ouvir-platform__arrow {
+  font-size: 1rem;
+  color: rgba(241, 237, 228, 0.3);
+  transition: transform 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.ouvir-platform:hover .ouvir-platform__arrow {
+  transform: translateX(4px);
+  color: rgba(241, 237, 228, 0.6);
+}
+
+/* ------------------------------------
+    22. PRINT STYLES
    ------------------------------------ */
 @media print {
   .site-header,

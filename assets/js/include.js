@@ -11,21 +11,47 @@
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    /* ---- Inject Header ---- */
-    const headerResp = await fetch('partials/header.html');
-    if (!headerResp.ok) throw new Error(`Header fetch failed: ${headerResp.status}`);
-    const headerHTML = await headerResp.text();
-    document.getElementById('site-header').innerHTML = headerHTML;
+    /* ---- Determine path prefix for partials ---- */
+    const pagePath = window.location.pathname.replace(/\/+$/, '');
+    const scriptSrc = document.currentScript && document.currentScript.src;
+    let prefix = '';
+    if (scriptSrc) {
+      const scriptPath = new URL(scriptSrc).pathname.replace(/\/+$/, '');
+      const siteRoot = scriptPath.replace(/\/assets\/js\/include\.js$/, '');
+      const relative = pagePath.replace(siteRoot, '');
+      const depth = relative.split('/').length - 2;
+      if (depth > 0) prefix = '../'.repeat(depth);
+    }
 
-    /* ---- Inject Footer ---- */
-    const footerResp = await fetch('partials/footer.html');
-    if (!footerResp.ok) throw new Error(`Footer fetch failed: ${footerResp.status}`);
-    const footerHTML = await footerResp.text();
-    document.getElementById('site-footer').innerHTML = footerHTML;
+    /* ---- Inject Header (if not already present) ---- */
+    const headerEl = document.getElementById('site-header');
+    if (headerEl && !headerEl.querySelector('.site-header__logo')) {
+      const headerResp = await fetch(prefix + 'partials/header.html');
+      if (!headerResp.ok) throw new Error(`Header fetch failed: ${headerResp.status}`);
+      const headerHTML = await headerResp.text();
+      headerEl.innerHTML = headerHTML;
+    }
+
+    /* ---- Inject Footer (if not already present) ---- */
+    const footerEl = document.getElementById('site-footer');
+    if (footerEl && !footerEl.querySelector('.site-footer')) {
+      const footerResp = await fetch(prefix + 'partials/footer.html');
+      if (!footerResp.ok) throw new Error(`Footer fetch failed: ${footerResp.status}`);
+      const footerHTML = await footerResp.text();
+      footerEl.innerHTML = footerHTML;
+    }
 
     /* ---- Set current year in footer ---- */
     const yearSpan = document.getElementById('footer-year');
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+    /* ---- Fix relative header links ---- */
+    document.querySelectorAll('.site-header a[href]').forEach((link) => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('http') && !href.startsWith('/') && !href.startsWith('#')) {
+        link.setAttribute('href', prefix + href);
+      }
+    });
 
     /* ---- Set active nav link ---- */
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
